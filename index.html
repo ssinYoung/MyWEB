@@ -1,39 +1,43 @@
 <!doctype html>
 <html>
 <head>
-    <title>Y3 MyGameList - html</title>
+    <title>Y3 MyGameList - JavaScript</title>
     <meta charset="utf-8">
+    <script>
+    function screenHandler(self){
+      var target = document.querySelector('body');
+      if (self.value === '어두운 배경'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        self.value = '밝은 배경';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+        alist[i].style.color = 'powderblue';
+        i = i + 1;
+        }
+      } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        self.value = '어두운 배경';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+        alist[i].style.color = 'blue';
+        i = i + 1;
+      }
+    }
+  }
+    </script>
 </head>
-<body style = "background-color:white; color:black">
+<body>
     <h1>나의 게임 개발 스토리!</h1>
     <ul><li><h3>게임 소개</h3></li></ul>
         <strong><a href = "https://github.com/ssinYoung/MyWEB/blob/main/BlueGreenDayWEB.html" title = "Open Script Dater">BlueGreenDay.RPG Script </a></strog>
         <br><strong><a href = "https://github.com/ssinYoung/MyWEB/blob/main/ChaosWarWEB.html" title = "Open Script Dater">ChaosWar.Def Script </a></strog>
-        <br><p><input type="button" value="어두운 배경" onclick=" var target = document.querySelector('body');
-        if (this.value == '어두운 배경'){
-          target.style.backgroundColor = 'black';
-          target.style.color = 'white';
-          this.value = '밝은 배경';
-
-          var alist = document.querySelectorAll('a');
-          var i = 0;
-          while(i < alist.length){
-          alist[i].style.color = 'powderblue';
-          i = i + 1;
-          }
-
-        } else {
-          target.style.backgroundColor = 'white';
-          target.style.color = 'black';
-          this.value = '어두운 배경';
-
-          var alist = document.querySelectorAll('a');
-          var i = 0;
-          while(i < alist.length){
-          alist[i].style.color = 'blue';
-          i = i + 1;
-          }
-        }"</p>
+        <br><p><input type= "button" value = "어두운 배경" onclick= "screenHandler(this);"></p>
       <ul><li><h3>게임 목록</h3></li></ul>
     <p><img src="Wolf_NightImage.jpg" width="100%">
     <br></p>
